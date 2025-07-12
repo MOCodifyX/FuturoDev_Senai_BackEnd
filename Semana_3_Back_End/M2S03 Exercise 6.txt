@@ -1,0 +1,36 @@
+A estruturação das classes foram deixadas a sua escolha. Justifique a criação dos atributos e métodos que foram criados nas 3 [três] classes. A justificativa deve ser feita nos que você decidiu criar e nos que estavam definidos nos outros exercícios.
+
+✅ Gênero
+
+- id: identifica cada gênero unicamente.
+
+- nome: nome do gênero (ex: Rock).
+
+- descrição: detalhes adicionais.
+
+- getInfo(): exibe as informações formatadas, evita repetição no código.
+
+✅ Disco
+
+- id: identificador único do disco.
+
+- nome: nome do disco.
+
+- genero: ligação com a classe Genero.
+
+- ativo: indica se o disco está ativo ou inativo (soft delete).
+
+- getInfo(): mostra o nome, status e o gênero do disco.
+
+✅ Autor
+
+- id: identificador do autor.
+
+- nome: nome do autor/artista.
+
+- disco: liga o autor a um disco.
+
+- getInfo(): mostra as informações básicas do autor e o nome do disco.
+
+
+Esses atributos e métodos foram criados para facilitar a organização, relacionar as classes e exibir os dados de forma clara no sistema, criei até o momento apenas os atributos e métodos solicitados para a entrega do exercício mais futuramente pretendo implementar mais funcionalidades principalmente no Menu de autores que está pouco funcional e sem a opção de excluir ou inserir discos a autores já criados!
