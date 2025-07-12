@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Biblioteca {
 
@@ -16,6 +17,25 @@ public class Biblioteca {
 
     public void adicionarLivro(Livro livro){
         acervo.add(livro);
+    }
+
+    public Livro buscarLivroPorISBN(String isbn){
+        return acervo.stream()
+                .filter(p -> p.getIsbn().equals(isbn))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void alterarLivro(Livro livroAlterado){
+        // ISBN --> Buscar Index no Acervo
+        Livro livroAntigo = buscarLivroPorISBN(livroAlterado.getIsbn());
+        int index = acervo.indexOf(livroAntigo);
+        acervo.set(index, livroAlterado);
+    }
+
+    public void removerLivro(String isbn){
+        Livro livroRemover = buscarLivroPorISBN(isbn);
+        acervo.remove(livroRemover);
     }
 
     public boolean emprestarLivro(String isbn){
@@ -73,6 +93,10 @@ public class Biblioteca {
                 System.out.println("- " + livro.getTitulo() + "(" + livro.getAutor() + ")");
             }
         }
+    }
+
+    public List<Livro> getAcervo() {
+        return acervo;
     }
 
 }

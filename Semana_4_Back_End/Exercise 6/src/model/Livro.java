@@ -25,8 +25,16 @@ public class Livro {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getAutor(){
         return autor;
+    }
+
+    public void setAutor(String autor){
+        this.autor = autor;
     }
 
     public boolean isEmprestado(){
@@ -58,4 +66,5 @@ public class Livro {
         }
         return descricao;
     }
+
 }
