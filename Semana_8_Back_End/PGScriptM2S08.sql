@@ -1,0 +1,2 @@
+CREATE DATABASE m2s08;
+

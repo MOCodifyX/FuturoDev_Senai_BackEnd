@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "5ac71ea9-c501-4720-872e-d6787131b88d",
+		"name": "Exercise - M2S08",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41258248"
+	},
+	"item": [
+		{
+			"name": "Criar Organização",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Green Future\",\r\n  \"contato\": \"contato@greenfuture.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/organizations",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todas as Organizações",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/organizations",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtros Organizações",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/organizations?nome=Red&contato",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"organizations"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Red"
+						},
+						{
+							"key": "contato",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Projeto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Projeto Reflorestar\",\r\n  \"descricao\": \"Plantio de árvores para reduzir CO2\",\r\n  \"regiao\": \"Sul\",\r\n  \"estimativaReducaoCO2\": 1500.0,\r\n  \"organizacao\": {\r\n    \"id\": 3\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/projects",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os Projetos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/projects",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtros Projetos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/projects?regiao=Sul&nomeOrganizacao",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects"
+					],
+					"query": [
+						{
+							"key": "regiao",
+							"value": "Sul"
+						},
+						{
+							"key": "nomeOrganizacao",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Projeto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Projeto Reflorestar Atualizado\",\r\n  \"descricao\": \"Plantio de árvores em maior escala\",\r\n  \"regiao\": \"Sul\",\r\n  \"estimativaReducaoCO2\": 2000.0,\r\n  \"organizacao\": {\r\n    \"id\": 3\r\n\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/projects/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Projeto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}projects/1",
+					"host": [
+						"{{baseURL}}projects"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Organização",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/organizations/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"organizations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
