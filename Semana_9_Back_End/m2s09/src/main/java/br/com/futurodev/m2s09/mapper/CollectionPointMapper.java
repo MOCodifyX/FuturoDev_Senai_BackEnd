@@ -3,6 +3,7 @@ package br.com.futurodev.m2s09.mapper;
 import br.com.futurodev.m2s09.dto.*;
 import br.com.futurodev.m2s09.entity.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,13 +12,16 @@ public class CollectionPointMapper {
     private CollectionPointMapper() {}
 
     public static CollectionPointResponseDTO toDto(CollectionPoint entity) {
-        List<CollectionPointMaterialResponseDTO> materials = entity.getAcceptedMaterials().stream()
+        List<CollectionPointMaterialResponseDTO> materials = entity.getAcceptedMaterials() != null
+                ? entity.getAcceptedMaterials().stream()
                 .map(material -> new CollectionPointMaterialResponseDTO(
                         material.getId(),
                         material.getElectronicWaste().getId(),
                         material.getElectronicWaste().getType(),
                         material.getMaxCapacity()
-                )).collect(Collectors.toList());
+                ))
+                .collect(Collectors.toList())
+                : new ArrayList<>();
 
         return new CollectionPointResponseDTO(
                 entity.getId(),
@@ -32,6 +36,10 @@ public class CollectionPointMapper {
         entity.setName(dto.name());
         entity.setAddress(dto.address());
         entity.setCollectionDay(dto.collectionDay());
+
+        if (entity.getAcceptedMaterials() == null) {
+            entity.setAcceptedMaterials(new ArrayList<>());
+        }
 
         if (dto.materials() != null) {
             entity.getAcceptedMaterials().removeIf(material ->
@@ -59,4 +67,5 @@ public class CollectionPointMapper {
         }
     }
 }
+
 

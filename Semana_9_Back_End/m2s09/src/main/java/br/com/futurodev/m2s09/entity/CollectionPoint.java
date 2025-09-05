@@ -2,6 +2,8 @@ package br.com.futurodev.m2s09.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,6 +28,6 @@ public class CollectionPoint {
     private String collectionDay;
 
     @OneToMany(mappedBy = "collectionPoint", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CollectionPointMaterial> acceptedMaterials;
+    private List<CollectionPointMaterial> acceptedMaterials = new ArrayList<>();
 
 }
