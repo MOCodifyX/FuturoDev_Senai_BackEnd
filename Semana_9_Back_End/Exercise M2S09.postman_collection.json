@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "f3ef8eb5-ab67-44ff-b8d0-6288e962db40",
+		"name": "Exercise M2S09",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41258248"
+	},
+	"item": [
+		{
+			"name": "M2S09",
+			"item": [
+				{
+					"name": "Filtro Ponto de Coleta/Lixo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/collection-points/electronic-waste/name/celular",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"collection-points",
+								"electronic-waste",
+								"name",
+								"celular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Lixo Eletronico (Celular)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"Celular\",\r\n  \"description\": \"Aparelhos celulares usados e quebrados\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Lixo Eletronico (Bateria)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"Celular\",\r\n  \"description\": \"Aparelhos celulares usados e quebrados\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Lixo Eletronico (Impressora)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"Impressora\",\r\n  \"description\": \"Impressoras domésticas ou de escritório\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Lixo Eletronico (Notebook)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"Notebook\",\r\n  \"description\": \"Notebooks antigos ou defeituosos\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Lixo Eletronico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Ponto de Coleta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Eco Ponto Central\",\r\n  \"address\": \"Rua das Flores, 123\",\r\n  \"collectionDay\": \"Segunda-feira\",\r\n  \"materials\": [\r\n    {\r\n      \"electronicWasteId\": 1,\r\n      \"maxCapacity\": 50\r\n    },\r\n    {\r\n      \"electronicWasteId\": 2,\r\n      \"maxCapacity\": 30\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/collection-points",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"collection-points"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Ponto de Coleta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/collection-points",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"collection-points"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtro Lixo Eletronico ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtro Ponto de Coleta ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/collection-points/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"collection-points",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Ponto de Coleta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ponto Central Atualizado\",\r\n    \"address\": \"Rua Nova, 123\",\r\n    \"collectionDay\": \"Segunda\",\r\n    \"materials\": [\r\n        { \"id\": 1, \"type\": \"Celular\", \"description\": \"Celulares usados\" },\r\n        { \"id\": 2, \"type\": \"Notebook\", \"description\": \"Notebooks quebrados\" }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/collection-points/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"collection-points",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Lixo Eletronico",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Celular Atualizado\",\r\n    \"description\": \"Aparelhos celulares usados e quebrados\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Ponto de Coleta ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/collection-points/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"collection-points",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Lixo Eletronico ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/electronic-waste/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"electronic-waste",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
